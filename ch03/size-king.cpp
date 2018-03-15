@@ -16,25 +16,41 @@ int main()
     cout << "---------" << endl;
     cout << "I will tell you the little and big size kings" << endl;
     cout << "---------" << endl;
-    // define variables: current string, shortest string, longest string
-    string current;
-    string shortest = "";
-    string longest = "";
 
+    string current_word;
+    vector<string> word_list;
+    
+    while (cin >> current_word) {
+        word_list.push_back(current_word);
+    }
+    //
+    // string shortest = word_list[0;
+    // string longest = "";
+
+    typedef vector<string>::size_type list_size;
     typedef string::size_type str_size;
+
+    list_size word_list_size = word_list.size();
+
+    if (word_list_size == 0) {
+        cout << "Watch it, pal." << endl;
+
+        return 1;
+    }
+
+    string shortest = word_list[0];
+    string longest = word_list[0];
     str_size short_size = shortest.size();
     str_size long_size = longest.size();
-    // ask for input - slow down, it's a mr. show s.1 ep.1 ref
-    cout << "Feed me the banana, slave." << endl;
-    while (cin >> current) {
-        str_size cur_size = current.size();
-        if (cur_size > long_size) {
-            longest = current;
-            long_size = cur_size;
-        }
+  
+    for (int cur = 1; cur != word_list_size; ++cur) {
+            
     }
+    
+     
+}
     // if size of input is greater than longest string
-    //
+    
     // if size of input is less than shortest string
     //
     // print shortest string
